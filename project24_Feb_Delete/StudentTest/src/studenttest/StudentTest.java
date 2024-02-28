@@ -1,5 +1,10 @@
+package studenttest;
+
+import java.awt.Color;
+import java.awt.Font;
 
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
 
 class StudentInfo{
     private String id;
@@ -17,8 +22,16 @@ class StudentInfo{
         sex = inputString("Enter sex:").charAt(0);
         avg = Float.parseFloat(inputString("Enter avg:"));
     }
-    void outputData(){
-        System.out.println(id + ""+ "\t"+name+"\t"+sex+"\t"+avg);
+    static void outputData(String m){
+        JTextArea text = new JTextArea(m, 10, 40);
+        text.setBackground(Color.black);
+        text.setForeground(Color.CYAN);
+        text.setFont(new Font("Times New Roman", Font.BOLD, 18));
+        text.setEditable(false);
+        JOptionPane.showMessageDialog(null, text, "Students", JOptionPane.PLAIN_MESSAGE);
+    }
+    String getResult(){
+        return id + ""+ "\t"+name+"\t"+sex+"\t"+avg+"\n";
     }
     public String getName(){return name;}
 
@@ -27,15 +40,18 @@ public class StudentTest {
     public static void main(String[] args) {
         int n = Integer.parseInt(JOptionPane.showInputDialog("Enter n:"));
         StudentInfo[] stu = new StudentInfo[n];
+        String result="ID\tNAME\tSEX\tAVG\n";
         for(int i=0; i<n; i++){
             stu[i] = new StudentInfo();
             stu[i].inputData();
+            result+=stu[i].getResult();
         }
-        for(int i=0; i<n; i++)
-            stu[i].outputData();
+        StudentInfo.outputData(result);
         deleteByName(stu);
+        result="ID\tNAME\tSEX\tAVG\n";
         for(int i=0; i<n-1; i++)
-            stu[i].outputData();
+            result+=stu[i].getResult();
+        StudentInfo.outputData(result);
     }
     static void deleteByName(StudentInfo[] st){
         String dname;

@@ -34,7 +34,8 @@ public class StudentTest_delOnCon {
         for(int i=0; i<n; i++)
             stu[i].outputData();
         deleteByName(stu);
-        for(int i=0; i<n-1; i++)
+        n--;
+        for(int i=0; i<n; i++)
             stu[i].outputData();
     }
     static void deleteByName(StudentInfo[] st){

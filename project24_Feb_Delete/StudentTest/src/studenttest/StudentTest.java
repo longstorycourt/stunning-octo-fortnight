@@ -49,7 +49,8 @@ public class StudentTest {
         StudentInfo.outputData(result);
         deleteByName(stu);
         result="ID\tNAME\tSEX\tAVG\n";
-        for(int i=0; i<n-1; i++)
+        n--;
+        for(int i=0; i<n; i++)
             result+=stu[i].getResult();
         StudentInfo.outputData(result);
     }

@@ -22,7 +22,8 @@ public class Student {
         name = scan.nextLine();
         System.out.print("Enter sex: ");
         sex = scan.nextLine();
-        scan.close();
+        
+        
     }
     public void Output(){
         System.out.println("Name: " +getName());

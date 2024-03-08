@@ -18,11 +18,11 @@ public class Semester1 {
         sub1 = scan.nextDouble();
         System.out.print("Enter subject2 's score: ");
         sub2 = scan.nextDouble();
-        scan.close();
+        
     }
     public void output(){
-        System.out.print("Semester1: ");
-        System.out.print("Semester1: "+getSub1()+ "\tSemester2: "+getSub2());
+        System.out.println("Semester1: ");
+        System.out.println("\tSubject1: "+getSub1()+ "\tSubject2: "+getSub2());
     }
     public double total(){return sub1+sub2;}
 

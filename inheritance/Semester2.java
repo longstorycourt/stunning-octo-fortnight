@@ -1,8 +1,10 @@
 package inheritance;
 
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
 public class Semester2 extends Semester1 {
+    static DecimalFormat df =new DecimalFormat("0.00");
     private double sub3;
     private double sub4;
     private double sub5;
@@ -46,16 +48,16 @@ public class Semester2 extends Semester1 {
     public void output(){
         st.Output();
         super.output();
-        System.out.println("Total: "+super.total()+" and average = " + super.total()/2);
-        System.out.println("Semester2: subject3: "+ getSub3()+"; subject4:"+getSub4()+"; subject5: "+getSub5());
-        System.out.println("Total: "+total()+" and average: "+total()/3);
-        System.out.println("The total average is "+ totalAvg());
+        System.out.println("Total: "+super.total()+" and Average = " + df.format(super.total()/2));
+        System.out.println("Semester2:\n\tSubject3: "+ getSub3()+"\tSubject4:"+getSub4()+"\tsubject5: "+getSub5());
+        System.out.println("Total: "+total()+" and Average: "+df.format(total()/3));
+        System.out.println("The total average is "+ df.format(totalAvg()));
     }
     public double total(){
         return (getSub3()+getSub4()+getSub5());
     }
     public double totalAvg(){
-        return (super.total()/2+total()/3);
+        return (super.total()/2+total()/3)/2;
     }
     
 }

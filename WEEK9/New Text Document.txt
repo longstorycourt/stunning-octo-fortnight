@@ -1,0 +1,8 @@
+week 9
+Project0603
+covers: 
+- single inheritance:
+	-superclass(base class)
+	-subclass (derived class)
+- one can be put over another 
+- syntax: class subclass_name extends superclass_name{ }
